@@ -53,7 +53,7 @@ GLOBAL_FUNC mpn_add_n
 	mov     LIMB0, [Inp1P]        ;1	1	p23	2	0.5
 	ADCSBB  LIMB0, [Inp2P]        ;2	2	p06 p23		1
 	mov     [SumP], LIMB0         ;1	2	p237 p4	3	1
-	vpblendd YMM0, YMM0, YMM0, 0  ; This one is black magic. Beware.
+;	vpblendd YMM0, YMM0, YMM0, 0  ; This one is black magic. Beware.
 	mov     LIMB0, [Inp1P+8]      ;1	1	p23	2	0.5
 	ADCSBB  LIMB0, [Inp2P+8]      ;2	2	p06 p23		1
 	mov     [SumP+8], LIMB0       ;1	2	p237 p4	3	1
