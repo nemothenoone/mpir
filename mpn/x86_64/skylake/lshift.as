@@ -27,6 +27,7 @@
 %include "yasm_mac.inc"
 
 BITS 64
+CPU  SSE4.2
 
 GLOBAL_FUNC mpn_lshift
     mov     r10, rdi
