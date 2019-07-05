@@ -31,7 +31,7 @@ GLOBAL_FUNC mpn_hamdist
 	xor     eax, eax
 	sub     rdi, rdx
 	jnc     .1
-	xalign  16
+	align  16
 .0:	mov     r10, [r9+rdi*8]
 	xor     r10, [rsi+rdi*8]
 	popcnt  r10, r10

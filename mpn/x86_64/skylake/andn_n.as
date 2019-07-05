@@ -27,6 +27,7 @@
 
 %include 'yasm_mac.inc'
 
+CPU nehalem
 BITS 64
     
 GLOBAL_FUNC mpn_andn_n
@@ -38,7 +39,7 @@ GLOBAL_FUNC mpn_andn_n
 	sub     r10, r9
 	jnc     .2
 	
-	xalign  16
+	align  16
 .1:	movdqu  xmm0, [r8+r10*8]
 	movdqu  xmm1, [r8+r10*8+16]
 	movdqu  xmm3, [rdx+r10*8+16]

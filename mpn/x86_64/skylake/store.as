@@ -46,7 +46,7 @@ GLOBAL_FUNC mpn_store
 .1:	sub     rsi, 4
 	jc      .3
 	
-	xalign  16
+	align  16
 .2:	lea     rdi, [rdi+32]
 	sub     rsi, 4
 	movdqa  [rdi], xmm0

@@ -27,7 +27,6 @@
 %include "yasm_mac.inc"
 
 BITS 64
-CPU  SSE4.2
 
 GLOBAL_FUNC mpn_lshift
     mov     r10, rdi
@@ -82,7 +81,7 @@ GLOBAL_FUNC mpn_lshift
 .4:	sub     rdx, 5
     jle     .6
 
-    xalign  16
+    align  16
 .5: movdqa  xmm2, [rsi+rdx*8+8]
     movdqa  xmm4, xmm2
     psllq   xmm5, xmm0
@@ -115,7 +114,7 @@ GLOBAL_FUNC mpn_lshift
     movhpd  [r10+rdx*8+32], xmm5
     ret
 
-    xalign  16
+    align  16
 .8:	movdqa  xmm2, [rsi+rdx*8+8]
     movdqa  xmm4, xmm2
     psllq   xmm5, xmm0
@@ -138,7 +137,7 @@ GLOBAL_FUNC mpn_lshift
     movhpd  [r10+rdx*8], xmm5
     ret
 
-    xalign  16
+    align  16
 .9:	movdqa  xmm2, [rsi+rdx*8+8]
     movdqa  xmm4, xmm2
     psllq   xmm5, xmm0
@@ -156,7 +155,7 @@ GLOBAL_FUNC mpn_lshift
     movhpd  [r10+rdx*8+16], xmm4
     ret
 
-    xalign  16
+    align  16
 .10:movq    xmm2, [rsi+rdx*8+16]
     pshufd  xmm2, xmm2, 0x4e
     movdqa  xmm4, xmm2

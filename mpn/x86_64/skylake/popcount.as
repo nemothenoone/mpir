@@ -30,7 +30,7 @@ GLOBAL_FUNC mpn_popcount
 	xor     eax, eax
 	sub     r8, rsi
 	jnc     .1
-	xalign  16
+	align  16
 .0:
 	popcnt  r9, [rdi+r8*8]
 	popcnt  r10, [rdi+r8*8+8]

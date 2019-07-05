@@ -38,7 +38,7 @@ GLOBAL_FUNC mpn_ior_n
 	sub     r10, rcx
 	jnc     .2
 	
-	xalign  16
+	align  16
 .1:	movdqu  xmm0, [rdx+r10*8]
 	movdqu  xmm1, [rdx+r10*8+16]
 	movdqu  xmm3, [rsi+r10*8+16]

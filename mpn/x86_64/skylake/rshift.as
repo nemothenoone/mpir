@@ -88,7 +88,7 @@ GLOBAL_FUNC mpn_rshift
     sub     rdx, rsi
     jnc     .6
 
-    xalign  16
+    align  16
 .5: movdqa  xmm2, [r11+rdx*8+16]
     movdqa  xmm4, xmm2
     psllq   xmm2, xmm1
@@ -132,7 +132,7 @@ GLOBAL_FUNC mpn_rshift
     movq    [r10+rdx*8+32], xmm3
     ret
 
-    xalign  16
+    align  16
 .8:	movdqa  xmm2, [r11+rdx*8+16]
     movdqa  xmm4, xmm2
     psllq   xmm2, xmm1
@@ -147,7 +147,7 @@ GLOBAL_FUNC mpn_rshift
     movhpd  [r10+rdx*8+24], xmm4
     ret
 
-    xalign  16
+    align  16
 .9:	movq    xmm2, [r11+rdx*8+16]
     movq    xmm4, xmm2
     psllq   xmm2, xmm1
@@ -161,7 +161,7 @@ GLOBAL_FUNC mpn_rshift
     movq    [r10+rdx*8+16], xmm4
     ret
 
-    xalign  16
+    align  16
 .10:psrldq  xmm5, 8
     por     xmm3, xmm5
     movq    [r10+rdx*8], xmm3

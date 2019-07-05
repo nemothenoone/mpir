@@ -44,7 +44,7 @@ GLOBAL_FUNC mpn_lshiftc
 	psllq   mm3, mm0
 	jc      .2
 	
-	xalign  16
+	align  16
 .1: movq    mm2, [rsi+rdx*8+16]
 	movq    mm4, mm2
 	psrlq   mm2, mm1
@@ -105,7 +105,7 @@ GLOBAL_FUNC mpn_lshiftc
 	emms
 	ret
 
-	xalign  16
+	align  16
 .4:	movq    mm2, [rsi+rdx*8+16]
 	movq    mm4, mm2
 	psrlq   mm2, mm1
@@ -125,7 +125,7 @@ GLOBAL_FUNC mpn_lshiftc
 	emms
 	ret
 
-	xalign  16
+	align  16
 .5:	movq    mm2, [rsi+rdx*8+16]
 	movq    mm4, mm2
 	psrlq   mm2, mm1
@@ -138,7 +138,7 @@ GLOBAL_FUNC mpn_lshiftc
 	emms
 	ret
 
-	xalign  16
+	align  16
 .6:	pxor    mm3, mm6
 	movq    [rdi+rdx*8+24], mm3
 	emms

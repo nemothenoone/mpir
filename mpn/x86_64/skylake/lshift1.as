@@ -36,7 +36,7 @@ GLOBAL_FUNC mpn_lshift1
 	cmp     rax, 0
 	jz      .2
 	
-	xalign  16
+	align  16
 .1:	mov     rdx, [rsi]
 	mov     r9, [rsi+8]
 	mov     r10, [rsi+16]

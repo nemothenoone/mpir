@@ -35,7 +35,7 @@ GLOBAL_FUNC mpn_divexact_byff
 	cmp     rdx, 0
 	je      .2
 ; want carry clear here
-	xalign  16
+	align  16
 .1:	sbb     rax, [rsi]
 	lea     rdi, [rdi+32]
 	mov     r9, rax
