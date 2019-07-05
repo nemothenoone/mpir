@@ -70,7 +70,7 @@ GLOBAL_FUNC mpn_lshift
     movq    rax, xmm3
     cmp     r11, rcx
     je      .4
-    movq    xmm2, [rsi+r8*8-8]
+    movq    xmm2, [rsi+rdx*8-8]
     movq    xmm4, xmm2
     psrlq   xmm2, xmm1
     movq    rax, xmm2
@@ -100,9 +100,9 @@ GLOBAL_FUNC mpn_lshift
     por     xmm4, xmm2
     movq    [r10+rdx*8+8], xmm4
     movhpd  [r10+rdx*8+16], xmm4
-    sub     r8, 4
+    sub     rdx, 4
     jg      .5
-.6: cmp     r8, -1
+.6: cmp     rdx, -1
     je      .9
     jg      .8
     jp      .10
