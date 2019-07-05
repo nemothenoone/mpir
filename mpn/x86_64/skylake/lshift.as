@@ -30,7 +30,7 @@ BITS 64
 
 GLOBAL_FUNC mpn_lshift
     mov     r10, rdi
-    mov     edi, rcx
+    mov     edi, ecx
     cmp     rdx, 2
     ja      .3
     jz      .2
